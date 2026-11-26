@@ -1,0 +1,168 @@
+{
+  "id": "pattern-empty-001",
+  "title": "Empty members list",
+  "category": "patterns",
+  "difficulty": "easy",
+  "error": null,
+  "scores": {
+    "ds_compliance": 100.0,
+    "functional": 100.0,
+    "visual": 0.0,
+    "ux": 0.0,
+    "accessibility": 70.0,
+    "code_quality": 100.0,
+    "reliability": 100.0,
+    "overall": 95.2
+  },
+  "graders": [
+    {
+      "name": "static",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "found_components": [
+          "Badge",
+          "Button",
+          "Card",
+          "PageHeader"
+        ],
+        "missing_required": [],
+        "hex": [],
+        "native_elements": [],
+        "uses_ds_imports": true,
+        "forbidden_hits": [],
+        "parser": "babel"
+      },
+      "reasoning": "AST shows DS imports and no token violations"
+    },
+    {
+      "name": "ds_compliance",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "required": [
+          "Button",
+          "Card"
+        ],
+        "found": [
+          "Button",
+          "Card"
+        ],
+        "missing": [],
+        "forbidden_hits": []
+      },
+      "reasoning": "AST compliance against required/forbidden component rules"
+    },
+    {
+      "name": "code_quality",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "bytes": 1380
+      },
+      "reasoning": "structure looks like a maintainable React task"
+    },
+    {
+      "name": "reliability",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "build": "ok",
+        "screenshot": true,
+        "page_errors": [],
+        "console_errors": []
+      },
+      "reasoning": "runtime ok"
+    },
+    {
+      "name": "functional",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "assertions": [
+          {
+            "kind": "render",
+            "passed": true,
+            "detail": "page loaded"
+          },
+          {
+            "kind": "visible",
+            "target": "css=.app-shell",
+            "passed": true
+          }
+        ]
+      },
+      "reasoning": "2/2 interaction assertions passed"
+    },
+    {
+      "name": "accessibility",
+      "kind": "deterministic",
+      "score": 70.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "violation_count": 2,
+        "violations": [
+          {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "description": "Ensure the document has a main landmark"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks"
+          }
+        ]
+      },
+      "reasoning": "2 axe violations"
+    },
+    {
+      "name": "visual",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "vision judge requires a live model screenshot"
+    },
+    {
+      "name": "ux",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "UX judge requires a live model screenshot"
+    }
+  ],
+  "generation": {
+    "model": "claude-opus-5.5",
+    "provider": "replay",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0,
+    "system_prompt": "(none: the full prompt is in prompt.md)",
+    "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\nThis project has a design system. Build the UI with it. Its DESIGN.md follows.\n\n<design_md>\n# Demo DS \u2014 DESIGN.md\n\nCompact, human-readable guide to the demo design system. Source of truth:\n`src/components/index.tsx`, `src/components/components.css`, `src/tokens.css`,\n`docs/components.md`, `docs/rules.md`.\n\n## Principles\n\n- Build product UI from the design-system components. Import them from `@ds`.\n- Do not recreate a component that already exists, and do not restyle one with\n  ad-hoc CSS.\n- All colors, spacing, radius and typography come from the tokens in\n  `src/tokens.css` (CSS custom properties). No raw hex/rgb colors, no raw px\n  spacing in product UI.\n- The theme is dark: a near-black background, slightly lighter surfaces, a teal\n  primary, a soft red for danger.\n\n## Components (`import { \u2026 } from \"@ds\"`)\n\n- **Button**: variants `primary`, `secondary`, `danger`, `ghost`. One primary\n  action per area. Destructive actions use `danger`.\n- **Input**, **Textarea**: text entry. Support an invalid state. Always pair with\n  a visible **Label**, plus **HelperText** for hints or errors.\n- **Label**, **HelperText** (has an error style), **Field**: a wrapper that renders\n  label + control + helper/error.\n- **Select**: a labeled select with built-in label, helper text and error message.\n- **Checkbox**, **Radio**, **Switch**: choice controls with a built-in label.\n  Use Switch for instant on/off settings.\n- **Tabs**: tab strip for switching between sections of one page.\n- **Dialog**: modal with a title. Use it for confirmations and short forms.\n- **Badge**: small status/metadata pill.\n- **Card**: surface container for grouped content.\n- **PageHeader**: page title, optional description and actions area.\n- **useDialog**: hook for dialog open/close state.\n\nNative `<button>` and `<select>` must not appear in product UI. Use `Button`\nand `Select`.\n\n## Layout helpers (global classes)\n\n- `.ds-stack`: vertical grid with `--space-4` gap.\n- `.ds-row`: horizontal flex row, `--space-3` gap, right-aligned (good for\n  action rows).\n\n## Tokens\n\n- Color: `--color-bg`, `--color-surface`, `--color-surface-2`, `--color-text`,\n  `--color-text-muted`, `--color-primary`, `--color-primary-text`,\n  `--color-danger`, `--color-border`, `--color-focus`\n- Spacing: `--space-1` (4px) \u2026 `--space-6` (32px)\n- Radius: `--radius-sm`, `--radius-md`, `--radius-lg`\n- Type: `--font-sans`, `--font-size-sm`, `--font-size-md`, `--font-size-lg`,\n  `--font-size-xl`\n- Other: `--shadow-md`, `--control-height`\n\n## Rules\n\n- Tokens only: colors, spacing, radius, typography come from `src/tokens.css`.\n- No raw hex or rgb in product UI.\n- Dialog footer: one primary and one secondary action only. Never six actions.\n- Destructive actions use `Button variant=\"danger\"` and a confirmation `Dialog`.\n- Every input has a visible `Label`. A placeholder is not a label.\n</design_md>\n\n## Task\n\nShow an empty state for a members table: title, short explanation, and a primary action to invite someone.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+  },
+  "artifacts": {
+    "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-B/cases/pattern-empty-001",
+    "screenshot": true,
+    "source": true
+  }
+}

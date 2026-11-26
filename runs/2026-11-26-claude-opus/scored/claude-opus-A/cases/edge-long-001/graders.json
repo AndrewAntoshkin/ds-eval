@@ -1,0 +1,144 @@
+[
+  {
+    "name": "static",
+    "kind": "deterministic",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "found_components": [],
+      "missing_required": [
+        "Card",
+        "Badge"
+      ],
+      "hex": [
+        "#f4f5f7",
+        "#1f2328",
+        "#ffffff",
+        "#d8dee4",
+        "#ddf4ff",
+        "#0550ae",
+        "#0969da",
+        "#57606a"
+      ],
+      "native_elements": [
+        "button"
+      ],
+      "uses_ds_imports": false,
+      "forbidden_hits": [
+        "raw-color"
+      ],
+      "parser": "babel"
+    },
+    "reasoning": "missing required components: Card, Badge; no design-system import; hardcoded colors: ['#f4f5f7', '#1f2328', '#ffffff', '#d8dee4', '#ddf4ff', '#0550ae']; forbidden: raw-color"
+  },
+  {
+    "name": "ds_compliance",
+    "kind": "deterministic",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "required": [
+        "Card",
+        "Badge"
+      ],
+      "found": [],
+      "missing": [
+        "Card",
+        "Badge"
+      ],
+      "forbidden_hits": [
+        "raw-color"
+      ]
+    },
+    "reasoning": "AST compliance against required/forbidden component rules"
+  },
+  {
+    "name": "code_quality",
+    "kind": "deterministic",
+    "score": 90.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "bytes": 3736
+    },
+    "reasoning": "uses any"
+  },
+  {
+    "name": "reliability",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "build": "ok",
+      "screenshot": true,
+      "page_errors": [],
+      "console_errors": []
+    },
+    "reasoning": "runtime ok"
+  },
+  {
+    "name": "functional",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "assertions": [
+        {
+          "kind": "render",
+          "passed": true,
+          "detail": "page loaded"
+        },
+        {
+          "kind": "visible",
+          "target": "css=.app-shell",
+          "passed": true
+        }
+      ]
+    },
+    "reasoning": "2/2 interaction assertions passed"
+  },
+  {
+    "name": "accessibility",
+    "kind": "deterministic",
+    "score": 85.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "violation_count": 1,
+      "violations": [
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+        }
+      ]
+    },
+    "reasoning": "1 axe violations"
+  },
+  {
+    "name": "visual",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "vision judge requires a live model screenshot"
+  },
+  {
+    "name": "ux",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "UX judge requires a live model screenshot"
+  }
+]

@@ -1,0 +1,191 @@
+{
+  "id": "component-button-001",
+  "title": "Button variants",
+  "category": "component",
+  "difficulty": "easy",
+  "error": null,
+  "scores": {
+    "ds_compliance": 0.0,
+    "functional": 50.0,
+    "visual": 0.0,
+    "ux": 0.0,
+    "accessibility": 55.0,
+    "code_quality": 100.0,
+    "reliability": 100.0,
+    "overall": 48.8
+  },
+  "graders": [
+    {
+      "name": "static",
+      "kind": "deterministic",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "found_components": [
+          "ToolbarButton"
+        ],
+        "missing_required": [
+          "Button"
+        ],
+        "hex": [
+          "#2563eb",
+          "#ffffff",
+          "#1d4ed8",
+          "#1f2937",
+          "#d1d5db",
+          "#f3f4f6",
+          "#dc2626",
+          "#b91c1c",
+          "#93c5fd",
+          "#f9fafb",
+          "#e5e7eb"
+        ],
+        "native_elements": [
+          "button"
+        ],
+        "uses_ds_imports": false,
+        "forbidden_hits": [
+          "native-button",
+          "raw-color"
+        ],
+        "parser": "babel"
+      },
+      "reasoning": "missing required components: Button; no design-system import; hardcoded colors: ['#2563eb', '#ffffff', '#1d4ed8', '#1f2937', '#d1d5db', '#f3f4f6']; forbidden: native-button, raw-color"
+    },
+    {
+      "name": "ds_compliance",
+      "kind": "deterministic",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "required": [
+          "Button"
+        ],
+        "found": [],
+        "missing": [
+          "Button"
+        ],
+        "forbidden_hits": [
+          "native-button",
+          "raw-color"
+        ]
+      },
+      "reasoning": "AST compliance against required/forbidden component rules"
+    },
+    {
+      "name": "code_quality",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "bytes": 3165
+      },
+      "reasoning": "structure looks like a maintainable React task"
+    },
+    {
+      "name": "reliability",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "build": "ok",
+        "screenshot": true,
+        "page_errors": [],
+        "console_errors": []
+      },
+      "reasoning": "runtime ok"
+    },
+    {
+      "name": "functional",
+      "kind": "deterministic",
+      "score": 50.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "assertions": [
+          {
+            "kind": "render",
+            "passed": true,
+            "detail": "page loaded"
+          },
+          {
+            "kind": "has_component",
+            "target": "Button",
+            "passed": false,
+            "detail": "unknown assertion"
+          }
+        ]
+      },
+      "reasoning": "1/2 interaction assertions passed"
+    },
+    {
+      "name": "accessibility",
+      "kind": "deterministic",
+      "score": 55.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "violation_count": 3,
+        "violations": [
+          {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "description": "Ensure the document has a main landmark"
+          },
+          {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks"
+          }
+        ]
+      },
+      "reasoning": "3 axe violations"
+    },
+    {
+      "name": "visual",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "vision judge requires a live model screenshot"
+    },
+    {
+      "name": "ux",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "UX judge requires a live model screenshot"
+    }
+  ],
+  "generation": {
+    "model": "claude-opus-5.5",
+    "provider": "replay",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0,
+    "system_prompt": "(none: the full prompt is in prompt.md)",
+    "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nCreate a toolbar with primary, secondary and danger buttons labelled Save, Cancel and Delete.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+  },
+  "artifacts": {
+    "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/component-button-001",
+    "screenshot": true,
+    "source": true
+  }
+}

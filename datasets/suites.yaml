@@ -11,3 +11,19 @@ smoke:
   - adversarial-actions-001
 
 full: smoke
+
+extended:
+  - component-button-001
+  - component-select-001
+  - component-input-001
+  - pattern-confirm-001
+  - pattern-empty-001
+  - page-settings-001
+  - a11y-labels-001
+  - edge-long-001
+  - adversarial-color-001
+  - adversarial-actions-001
+  - pattern-card-list-001
+  - page-notifications-001
+  - component-feedback-001
+  - pattern-invite-modal-001

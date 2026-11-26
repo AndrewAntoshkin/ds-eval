@@ -1,0 +1,172 @@
+{
+  "id": "pattern-confirm-001",
+  "title": "Destructive confirmation",
+  "category": "patterns",
+  "difficulty": "medium",
+  "error": null,
+  "scores": {
+    "ds_compliance": 0.0,
+    "functional": 100.0,
+    "visual": 0.0,
+    "ux": 0.0,
+    "accessibility": 100.0,
+    "code_quality": 100.0,
+    "reliability": 100.0,
+    "overall": 69.0
+  },
+  "graders": [
+    {
+      "name": "static",
+      "kind": "deterministic",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "found_components": [
+          "ConfirmDialog"
+        ],
+        "missing_required": [
+          "Button",
+          "Dialog"
+        ],
+        "hex": [
+          "#111827",
+          "#f9fafb",
+          "#ffffff",
+          "#e5e7eb",
+          "#4b5563",
+          "#065f46",
+          "#d1d5db",
+          "#dc2626"
+        ],
+        "native_elements": [
+          "button"
+        ],
+        "uses_ds_imports": false,
+        "forbidden_hits": [
+          "raw-color"
+        ],
+        "parser": "babel"
+      },
+      "reasoning": "missing required components: Button, Dialog; no design-system import; hardcoded colors: ['#111827', '#f9fafb', '#ffffff', '#e5e7eb', '#4b5563', '#065f46']; forbidden: raw-color"
+    },
+    {
+      "name": "ds_compliance",
+      "kind": "deterministic",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "required": [
+          "Button",
+          "Dialog"
+        ],
+        "found": [],
+        "missing": [
+          "Button",
+          "Dialog"
+        ],
+        "forbidden_hits": [
+          "raw-color"
+        ]
+      },
+      "reasoning": "AST compliance against required/forbidden component rules"
+    },
+    {
+      "name": "code_quality",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "bytes": 6134
+      },
+      "reasoning": "structure looks like a maintainable React task"
+    },
+    {
+      "name": "reliability",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "build": "ok",
+        "screenshot": true,
+        "page_errors": [],
+        "console_errors": []
+      },
+      "reasoning": "runtime ok"
+    },
+    {
+      "name": "functional",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "assertions": [
+          {
+            "kind": "render",
+            "passed": true,
+            "detail": "page loaded"
+          },
+          {
+            "kind": "visible",
+            "target": "css=.app-shell",
+            "passed": true
+          }
+        ]
+      },
+      "reasoning": "2/2 interaction assertions passed"
+    },
+    {
+      "name": "accessibility",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "violation_count": 0,
+        "violations": []
+      },
+      "reasoning": "axe-core on the rendered page"
+    },
+    {
+      "name": "visual",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "vision judge requires a live model screenshot"
+    },
+    {
+      "name": "ux",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "UX judge requires a live model screenshot"
+    }
+  ],
+  "generation": {
+    "model": "claude-opus-5.5",
+    "provider": "replay",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0,
+    "system_prompt": "(none: the full prompt is in prompt.md)",
+    "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nA Delete project action must open a confirmation dialog.\nConfirm is destructive, cancel is secondary. No extra footer actions.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+  },
+  "artifacts": {
+    "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/pattern-confirm-001",
+    "screenshot": true,
+    "source": true
+  }
+}
