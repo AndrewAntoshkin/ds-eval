@@ -1,0 +1,26 @@
+id: component-feedback-001
+title: Feedback form
+category: component
+difficulty: medium
+prompt: |
+  Create a feedback form with a subject field, a category picker (Bug, Idea,
+  Question), a multi-line message field with helper text saying it is limited to
+  500 characters, and "Send feedback" / "Cancel" actions. Every field needs a
+  visible label.
+required_components:
+  - Input
+  - Select
+  - Textarea
+  - Label
+  - Button
+forbidden_patterns:
+  - raw-color
+  - native-select
+  - native-button
+metadata:
+  label_required: true
+assertions:
+  - kind: visible
+    target: role=textbox[name=Message]
+  - kind: click
+    target: role=button[name="Send feedback"]

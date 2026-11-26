@@ -1,0 +1,18 @@
+id: pattern-card-list-001
+title: Team member card list
+category: patterns
+difficulty: easy
+prompt: |
+  Show a list of five team members as cards. Each card shows the person's name,
+  their role, a status tag (Active, Invited or Suspended), and a secondary
+  "View profile" action.
+required_components:
+  - Card
+  - Badge
+  - Button
+forbidden_patterns:
+  - raw-color
+  - native-button
+assertions:
+  - kind: visible
+    target: text=View profile

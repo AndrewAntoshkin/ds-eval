@@ -1,0 +1,21 @@
+id: pattern-invite-modal-001
+title: Invite member modal
+category: patterns
+difficulty: medium
+prompt: |
+  An "Invite member" button opens a modal with an email field and a role picker
+  (Admin, Editor, Viewer). The modal footer has "Send invite" and "Cancel".
+required_components:
+  - Dialog
+  - Input
+  - Label
+  - Select
+  - Button
+forbidden_patterns:
+  - raw-color
+  - native-button
+assertions:
+  - kind: click
+    target: role=button[name="Invite member"]
+  - kind: visible
+    target: role=dialog

@@ -1,0 +1,22 @@
+id: page-notifications-001
+title: Notification preferences
+category: pages
+difficulty: medium
+prompt: |
+  Build a notification preferences form: on/off toggles for email and push
+  notifications, a digest frequency choice (Daily, Weekly, Never), a checkbox to
+  opt in to product update emails, and a "Save preferences" button.
+required_components:
+  - Switch
+  - Radio
+  - Checkbox
+  - Button
+forbidden_patterns:
+  - raw-color
+  - native-button
+  - native-input
+assertions:
+  - kind: visible
+    target: role=radio[name=Weekly]
+  - kind: click
+    target: role=button[name="Save preferences"]
