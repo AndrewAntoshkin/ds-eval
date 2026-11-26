@@ -40,6 +40,7 @@ class ModelConfig(BaseModel):
     provider: str
     model: str | None = None
     pack: str | None = None
+    path: str | None = None
     label: str | None = None
     temperature: float = 0.0
 

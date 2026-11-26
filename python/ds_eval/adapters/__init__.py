@@ -4,12 +4,14 @@ from ds_eval.adapters.anthropic import AnthropicAdapter
 from ds_eval.adapters.base import ModelAdapter
 from ds_eval.adapters.fixture import FixtureAdapter
 from ds_eval.adapters.openai import OpenAIAdapter
+from ds_eval.adapters.replay import ReplayAdapter
 from ds_eval.schemas import ModelConfig
 
 PROVIDERS = {
     "fixture": FixtureAdapter,
     "anthropic": AnthropicAdapter,
     "openai": OpenAIAdapter,
+    "replay": ReplayAdapter,
 }
 
 

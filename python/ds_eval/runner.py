@@ -79,8 +79,8 @@ def run_suite(
             EvalContext(case=case, ds_docs=ds_docs, system_prompt=SYSTEM_PROMPT),
         )
         generation.files = normalize_files(generation.files)
-        _write(case_dir / "system.md", SYSTEM_PROMPT)
-        _write(case_dir / "prompt.md", task_prompt)
+        _write(case_dir / "system.md", generation.system_prompt or SYSTEM_PROMPT)
+        _write(case_dir / "prompt.md", generation.task_prompt or task_prompt)
         _write(case_dir / "generation.json", generation.model_dump_json(indent=2))
         for rel, content in generation.files.items():
             _write(case_dir / "source" / Path(rel).name, content)
@@ -143,7 +143,7 @@ def run_suite(
         "aggregates": aggregates,
         "cost_usd": round(sum(r["generation"]["cost_usd"] for r in results), 4),
         "latency_ms": sum(r["generation"]["latency_ms"] for r in results),
-        "live": config.provider != "fixture",
+        "live": config.provider not in {"fixture", "replay"},
         "cases": results,
     }
     _write(run_dir / "summary.json", json.dumps(summary, indent=2))
