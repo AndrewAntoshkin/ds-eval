@@ -1,0 +1,800 @@
+[
+  {
+    "condition": "A",
+    "case": "a11y-labels-001",
+    "neutral_id": "59ee8c8d64",
+    "subagent_id": "bc-07ee1069-22be-5c4b-bba1-26c62ad30935",
+    "task_tsx_sha256": "fabda666db1d056633ef4832d07bb7155f8dab4de6dc492663dfc792cd51d326",
+    "task_tsx_bytes": 7369,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/59ee8c8d64/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/59ee8c8d64/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "adversarial-actions-001",
+    "neutral_id": "4bf701586e",
+    "subagent_id": "bc-1f0c8b9c-8efc-54d9-8b0b-e23da675c406",
+    "task_tsx_sha256": "7fc48fc9f5a739cafddd2931358079cb624ba06409499b68e5495ba4805f5aa6",
+    "task_tsx_bytes": 8895,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/4bf701586e/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/4bf701586e/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "adversarial-color-001",
+    "neutral_id": "10118d6e16",
+    "subagent_id": "bc-94549c90-0cda-5746-8d13-f305e7d36641",
+    "task_tsx_sha256": "9e9d60f139bba224d6b79579156d5ffd04b933881d73c88f7e16cfd67f05cb50",
+    "task_tsx_bytes": 2344,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/10118d6e16/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/10118d6e16/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "component-button-001",
+    "neutral_id": "70ec6904de",
+    "subagent_id": "bc-6d676c21-4634-58b0-8525-3f0bf11824e4",
+    "task_tsx_sha256": "366d7c66c10f21b2553307a14ea16e0544aa3613917c0a4555660b001a09a4ef",
+    "task_tsx_bytes": 3165,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/70ec6904de/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/70ec6904de/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "component-feedback-001",
+    "neutral_id": "16d876d43c",
+    "subagent_id": "bc-c44083c1-6c71-5213-a58d-b34efd14b9a7",
+    "task_tsx_sha256": "5dce74641f06c7bddfa6ba03534c2e8d0a943edf294c4257b53aaf3f2d40db15",
+    "task_tsx_bytes": 7693,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/16d876d43c/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/16d876d43c/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "component-input-001",
+    "neutral_id": "d6bc6c30b9",
+    "subagent_id": "bc-7cb36938-7afd-5124-b9d4-d7af6bd5bb05",
+    "task_tsx_sha256": "8fd5b4e0add7987edd9170ddec79417aa6773a43572aa75ce7b61a571f1b7f67",
+    "task_tsx_bytes": 5143,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/d6bc6c30b9/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/d6bc6c30b9/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "component-select-001",
+    "neutral_id": "9dedc75e49",
+    "subagent_id": "bc-efb4d2a6-c2f9-5c0c-b6c5-7da9dfb65b10",
+    "task_tsx_sha256": "32300fe1b9107e337f41b18ffe4f124158e50bc1fcff7ea1d9199fe3c641b9fd",
+    "task_tsx_bytes": 8056,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/9dedc75e49/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/9dedc75e49/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "edge-long-001",
+    "neutral_id": "0984673a16",
+    "subagent_id": "bc-ed0e2c69-e50d-5bb6-9c44-06b73b39f182",
+    "task_tsx_sha256": "abdd0b14561411360c7cc6da45c9a4dfe6004a1cc5144217e7b208704ece0877",
+    "task_tsx_bytes": 3738,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/0984673a16/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/0984673a16/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "page-notifications-001",
+    "neutral_id": "4e733f69e9",
+    "subagent_id": "bc-7afb2240-0ca8-5252-aa43-51c884f969fe",
+    "task_tsx_sha256": "c95117a3d69e718d04c96778701c686c27aeca06acba90e61079cad86c75aeeb",
+    "task_tsx_bytes": 9485,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/4e733f69e9/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/4e733f69e9/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "page-settings-001",
+    "neutral_id": "9810f2f110",
+    "subagent_id": "bc-320c728f-adff-5ae9-82c0-2b58c823b46c",
+    "task_tsx_sha256": "05c3924350a7d75f154bdb9f12202f6a30ad0593ded5318cd2826817eb2224d0",
+    "task_tsx_bytes": 28336,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/9810f2f110/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/9810f2f110/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "pattern-card-list-001",
+    "neutral_id": "97c74424b3",
+    "subagent_id": "bc-83e13636-68bb-52b3-a6d0-878db54d312c",
+    "task_tsx_sha256": "f2e621731d78e6d1a614a904fd6e9cdcca4ad219ce6ac7a80f04ce69108c3cc8",
+    "task_tsx_bytes": 5585,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/97c74424b3/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/97c74424b3/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "pattern-confirm-001",
+    "neutral_id": "0d64fbfd8f",
+    "subagent_id": "bc-bf5cc700-6bc1-586e-a7c1-3ce11ba6039a",
+    "task_tsx_sha256": "a45c11a6d63b2040abac444b55c1f6134f80bcb834bf41182ebb41636cf17395",
+    "task_tsx_bytes": 6134,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/0d64fbfd8f/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/0d64fbfd8f/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "pattern-empty-001",
+    "neutral_id": "95ea8fadb2",
+    "subagent_id": "bc-e47842b6-76b0-5b00-80a1-ece8eb5c7b13",
+    "task_tsx_sha256": "08215f6290fcc89608c26aced680bfa570ec76d9a75a0a10fc83f73af31b287e",
+    "task_tsx_bytes": 4068,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/95ea8fadb2/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/95ea8fadb2/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "A",
+    "case": "pattern-invite-modal-001",
+    "neutral_id": "50b7d53d1d",
+    "subagent_id": "bc-58599b09-ed29-5778-9d09-30e5d7bcb803",
+    "task_tsx_sha256": "bb13f494d6f8b266c828d8620c1fbc105482cac354daf37a7dc7982ed6ad62f0",
+    "task_tsx_bytes": 11153,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/50b7d53d1d/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/50b7d53d1d/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "a11y-labels-001",
+    "neutral_id": "2bc3e74dea",
+    "subagent_id": "bc-35dc0e13-b9ae-5814-9a51-66bba541f325",
+    "task_tsx_sha256": "b88f5053f231f0261685ac9af910692b6e2c92fa5921a61e46d0acf86f5b672a",
+    "task_tsx_bytes": 5068,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/2bc3e74dea/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/2bc3e74dea/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "adversarial-actions-001",
+    "neutral_id": "813e8af954",
+    "subagent_id": "bc-cd88651b-777d-5e29-bcdd-b08e773abb8e",
+    "task_tsx_sha256": "9e30ef330724d40ddf0e402c1672210d2e14d4ae36c4854f4225e9bff09fb255",
+    "task_tsx_bytes": 4748,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/813e8af954/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/813e8af954/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "adversarial-color-001",
+    "neutral_id": "a8d81c2b35",
+    "subagent_id": "bc-c4e3da62-2025-5eb2-8431-2dd0b746c8b7",
+    "task_tsx_sha256": "9fe8b9c4484a4d3465ce90287a3a1876c5e6a48332090dc96d43cfe7cf59f075",
+    "task_tsx_bytes": 1203,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/a8d81c2b35/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/a8d81c2b35/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "component-button-001",
+    "neutral_id": "abdb44f1e4",
+    "subagent_id": "bc-5ef024ab-a5d5-5982-879d-62b5d78216a7",
+    "task_tsx_sha256": "a756e6944741a27907b3344ef47b0f38d15de6e4ee5c072745a05059f5fa7e69",
+    "task_tsx_bytes": 1420,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/abdb44f1e4/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/abdb44f1e4/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "component-feedback-001",
+    "neutral_id": "69607fc12c",
+    "subagent_id": "bc-88707346-dd3f-5d20-addd-a006cd337e93",
+    "task_tsx_sha256": "0c3fe3b3bf9bb745c8a40f7b9137ac763ccefee8a4f15103a36b28bdf2bf2667",
+    "task_tsx_bytes": 3283,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/69607fc12c/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/69607fc12c/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "component-input-001",
+    "neutral_id": "0adecea557",
+    "subagent_id": "bc-171d4f11-8d16-5730-bae4-a60b38555e3b",
+    "task_tsx_sha256": "ba982a461a516660230ee18163f666cfe66202704da4fc088eda894249ac5b99",
+    "task_tsx_bytes": 1910,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/0adecea557/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/0adecea557/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "component-select-001",
+    "neutral_id": "a27596aadc",
+    "subagent_id": "bc-8ac6fae3-e317-58f8-81ab-4952ada771a3",
+    "task_tsx_sha256": "c817b4a2b73c95a191f2680d202c58cda9ad81f8a950128784d960455370342c",
+    "task_tsx_bytes": 2207,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/a27596aadc/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/a27596aadc/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "edge-long-001",
+    "neutral_id": "102c2b60dc",
+    "subagent_id": "bc-2139e920-0ea2-5ffd-b92f-0abab21132c5",
+    "task_tsx_sha256": "b649b119d23ea5c2698adac9668262b530459e763b2a4c2cab6f1463680fc913",
+    "task_tsx_bytes": 3430,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/102c2b60dc/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/102c2b60dc/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "page-notifications-001",
+    "neutral_id": "1cba61b5ff",
+    "subagent_id": "bc-5676a271-786c-5c2b-affa-8f0c62c5ddeb",
+    "task_tsx_sha256": "70284154a5fcd05ddeb4c7c21f5578f6ea32d1194e35604777b2805a5fd75d4c",
+    "task_tsx_bytes": 3779,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/1cba61b5ff/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/1cba61b5ff/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "page-settings-001",
+    "neutral_id": "a0c24f88dc",
+    "subagent_id": "bc-931712d4-bbfa-58d3-b4a1-b2184b22da0d",
+    "task_tsx_sha256": "1233e66141f971415b2621734a44d41f243f7e5379e31404194e2ea067924980",
+    "task_tsx_bytes": 8143,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/a0c24f88dc/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/a0c24f88dc/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "pattern-card-list-001",
+    "neutral_id": "7c88de66d4",
+    "subagent_id": "bc-26530480-c6ec-53ac-9592-a2eb01ea8785",
+    "task_tsx_sha256": "4673d12a22c32c82f3a9e1cbaf1903c6db478347ad0d852ca1ba9c4c06553e6b",
+    "task_tsx_bytes": 3352,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/7c88de66d4/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/7c88de66d4/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "pattern-confirm-001",
+    "neutral_id": "b99def889b",
+    "subagent_id": "bc-21833518-9e2d-541a-9095-a6ac3f7b56f6",
+    "task_tsx_sha256": "0382bed9c5aeb8bcc66dd36bdeba2022ca9a19942abefdbcec9bb16b62688e95",
+    "task_tsx_bytes": 2088,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/b99def889b/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/b99def889b/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "pattern-empty-001",
+    "neutral_id": "3e8c468e27",
+    "subagent_id": "bc-ef5c117c-4e82-5fef-b7b2-4de72a139888",
+    "task_tsx_sha256": "08951a3081f9a0d5a284d92f2aeda3323044ca46c1e8b7849241a924ebd6e494",
+    "task_tsx_bytes": 1380,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/3e8c468e27/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/3e8c468e27/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "B",
+    "case": "pattern-invite-modal-001",
+    "neutral_id": "2e335d21e2",
+    "subagent_id": "bc-2a5dc2be-8a32-5bc0-b1b8-0ba185045ae0",
+    "task_tsx_sha256": "ea54be8d57e0066c9c6db54334551a1e59eee584b1f5778a0bf87d727ea2bdb3",
+    "task_tsx_bytes": 3193,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/2e335d21e2/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/2e335d21e2/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "a11y-labels-001",
+    "neutral_id": "67c2d83d4d",
+    "subagent_id": "bc-0317a4c1-2772-52bf-a81a-45fab32120dc",
+    "task_tsx_sha256": "26b87f2a9c53c97fc01a1731adac21a51d1f1f87bb58aa9f425e17f2a9f47c8f",
+    "task_tsx_bytes": 4600,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/67c2d83d4d/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/67c2d83d4d/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "adversarial-actions-001",
+    "neutral_id": "7d1b40c143",
+    "subagent_id": "bc-6a6c04f8-83c4-5f33-8fd5-d0b7540edaee",
+    "task_tsx_sha256": "c6e34b2c79897209f1f96379459ebae8bd2043517c486cb87fc2943634169b32",
+    "task_tsx_bytes": 5307,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/7d1b40c143/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/7d1b40c143/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "adversarial-color-001",
+    "neutral_id": "fb0ea73f72",
+    "subagent_id": "bc-55df2b79-a744-5508-98f5-b72ac2da6f44",
+    "task_tsx_sha256": "2ccbdb4d403594f44c57e08e780e130ad54635c62101984c3e7e9bc75c511a0d",
+    "task_tsx_bytes": 1244,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/fb0ea73f72/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/fb0ea73f72/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "component-button-001",
+    "neutral_id": "178ba6b367",
+    "subagent_id": "bc-d0f1b58e-82a9-598d-9a71-01a19f9a3590",
+    "task_tsx_sha256": "c12671a3f29749837cc99824c945c4658dda0bd5ae5a77c12676be02c45eaf71",
+    "task_tsx_bytes": 1670,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/178ba6b367/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/178ba6b367/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "component-feedback-001",
+    "neutral_id": "17b2a55c8f",
+    "subagent_id": "bc-6f051eb9-1266-501a-89c7-95a8b0513b70",
+    "task_tsx_sha256": "6bd5e89fc28d67945dd3eee75db80a3b101fd34d622b53179527627e36e095ba",
+    "task_tsx_bytes": 3561,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/17b2a55c8f/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/17b2a55c8f/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "component-input-001",
+    "neutral_id": "80118c16d3",
+    "subagent_id": "bc-658ede98-36fb-5a00-922c-0a9037ea3d75",
+    "task_tsx_sha256": "5bcef3f256594dd3e3fd395fc116a139b5a181b3bce5f69e7842d32f73ddbb23",
+    "task_tsx_bytes": 1260,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/80118c16d3/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/80118c16d3/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "component-select-001",
+    "neutral_id": "5402857939",
+    "subagent_id": "bc-67b28453-2395-5621-abd0-afc26f993396",
+    "task_tsx_sha256": "7bee02ac2e90100827a85459148621cd42ea5e989cc248d158f8f60257fd072b",
+    "task_tsx_bytes": 2373,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/5402857939/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/5402857939/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "edge-long-001",
+    "neutral_id": "3f1f43ef50",
+    "subagent_id": "bc-9d907a10-cfab-545b-b78a-9f9723f2945d",
+    "task_tsx_sha256": "7e2f7cdc7d4b2aedec34182e32f776880c8bbaba85c0ea11737468deaf3f4df4",
+    "task_tsx_bytes": 3750,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/3f1f43ef50/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/3f1f43ef50/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "page-notifications-001",
+    "neutral_id": "2e0725cf31",
+    "subagent_id": "bc-c5ceff13-eab9-503f-9d00-a6ca192aaab9",
+    "task_tsx_sha256": "98c46b6a1aa5f47010fb6be609bf0415f3a142260c59e04eec3110ad4bfaadfb",
+    "task_tsx_bytes": 3250,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/2e0725cf31/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/2e0725cf31/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "page-settings-001",
+    "neutral_id": "6b29923747",
+    "subagent_id": "bc-a6bad81d-e931-5fa7-8bc2-cec5bc80539a",
+    "task_tsx_sha256": "8ac8f107b101bcfae8f2b4252db2af413a20d446cc76b13178dd070f6be73af9",
+    "task_tsx_bytes": 9918,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/6b29923747/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/6b29923747/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "pattern-card-list-001",
+    "neutral_id": "281e79af75",
+    "subagent_id": "bc-616010ba-a67d-5ee8-a00c-cdbd33388390",
+    "task_tsx_sha256": "be023e59a630045e4922c7ddd1e83b536dd4d7670d0b17a366bd2a36f764e503",
+    "task_tsx_bytes": 3663,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/281e79af75/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/281e79af75/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "pattern-confirm-001",
+    "neutral_id": "53ff2cece2",
+    "subagent_id": "bc-3e9ca6b9-9d2c-584e-9d2d-2efded18cb5a",
+    "task_tsx_sha256": "a19c9b46e7bea9eca06eb6ca6329712b80c263d647d51cce486c6fbda554019e",
+    "task_tsx_bytes": 1886,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/53ff2cece2/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/53ff2cece2/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "pattern-empty-001",
+    "neutral_id": "cbe0f742ee",
+    "subagent_id": "bc-445bb790-0a16-5305-9d9f-2c6d26572681",
+    "task_tsx_sha256": "a0acc714fd2b7ce2de64c2478d75362df3b52ba88acf659615feaa7181d8b1e6",
+    "task_tsx_bytes": 3709,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/cbe0f742ee/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/cbe0f742ee/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  },
+  {
+    "condition": "C",
+    "case": "pattern-invite-modal-001",
+    "neutral_id": "6dc1164172",
+    "subagent_id": "bc-f4e95f78-0de9-5936-9c6a-9fb29c5aef26",
+    "task_tsx_sha256": "9c1d7db9a3759337e0e48b742508a9058793cec446cd98640602f6c5f3138b5c",
+    "task_tsx_bytes": 4054,
+    "tool_calls": [
+      {
+        "tool": "read_file",
+        "path": "/tmp/dsgen/6dc1164172/prompt.md"
+      },
+      {
+        "tool": "search_replace",
+        "path": "/tmp/dsgen/6dc1164172/Task.tsx"
+      }
+    ],
+    "only_read_prompt_and_write_answer": true
+  }
+]
