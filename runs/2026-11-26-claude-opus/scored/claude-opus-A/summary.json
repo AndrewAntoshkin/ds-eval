@@ -1,0 +1,2580 @@
+{
+  "run_id": "claude-opus-A",
+  "created_at": "2026-11-26T06:12:44.295815+00:00",
+  "model": "claude-opus-A",
+  "model_config": {
+    "provider": "replay",
+    "model": "claude-opus-5.5",
+    "pack": null,
+    "path": "runs/2026-11-26-claude-opus/A",
+    "label": "Claude Opus 5.5, no DS context",
+    "temperature": 0.0
+  },
+  "suite": "extended",
+  "design_system": {
+    "name": "Demo DS",
+    "version": "1.0",
+    "components": {
+      "path": "./src/components"
+    },
+    "tokens": {
+      "path": "./src/tokens.css"
+    },
+    "documentation": {
+      "path": "./docs"
+    },
+    "rules": []
+  },
+  "case_count": 14,
+  "overall": 63.4,
+  "aggregates": {
+    "ds_compliance": 0.0,
+    "functional": 94.0,
+    "visual": 0.0,
+    "ux": 0.0,
+    "accessibility": 84.3,
+    "code_quality": 90.7,
+    "reliability": 100.0
+  },
+  "cost_usd": 0.0,
+  "latency_ms": 0,
+  "live": false,
+  "cases": [
+    {
+      "id": "a11y-labels-001",
+      "title": "Accessible login form",
+      "category": "accessibility",
+      "difficulty": "medium",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 100.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 69.0
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [],
+            "missing_required": [
+              "Input",
+              "Label",
+              "Button"
+            ],
+            "hex": [
+              "#f4f5f7",
+              "#1a1d23",
+              "#ffffff",
+              "#5a6170",
+              "#b8bec9",
+              "#c62828",
+              "#b71c1c",
+              "#e0a8a8",
+              "#fdecec",
+              "#7f1414",
+              "#a5d6a7",
+              "#edf7ee",
+              "#1b5e20",
+              "#1f5fd1"
+            ],
+            "native_elements": [
+              "input",
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Input, Label, Button; no design-system import; hardcoded colors: ['#f4f5f7', '#1a1d23', '#ffffff', '#5a6170', '#b8bec9', '#c62828']; forbidden: raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Input",
+              "Label",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Input",
+              "Label",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 7365
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 0,
+            "violations": []
+          },
+          "reasoning": "axe-core on the rendered page"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nCreate a login form. Every field must have a visible label. Errors must be\nassociated with the field, not only shown as placeholder text.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/a11y-labels-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "adversarial-actions-001",
+      "title": "Dialog footer limit",
+      "category": "adversarial",
+      "difficulty": "hard",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 100.0,
+        "code_quality": 90.0,
+        "reliability": 100.0,
+        "overall": 67.4
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [],
+            "missing_required": [
+              "Dialog",
+              "Button"
+            ],
+            "hex": [
+              "#f4f5f7"
+            ],
+            "native_elements": [
+              "button",
+              "input",
+              "textarea"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Dialog, Button; no design-system import; hardcoded colors: ['#f4f5f7']; forbidden: raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Dialog",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Dialog",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 90.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 8893
+          },
+          "reasoning": "high function count"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 0,
+            "violations": []
+          },
+          "reasoning": "axe-core on the rendered page"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nPut six actions in a dialog footer: Save, Save draft, Preview, Duplicate, Archive, Cancel.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/adversarial-actions-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "adversarial-color-001",
+      "title": "Refuse raw purple",
+      "category": "adversarial",
+      "difficulty": "hard",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 60.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 62.6
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "PrimaryButton",
+              "SecondaryButton"
+            ],
+            "missing_required": [
+              "Button"
+            ],
+            "hex": [
+              "#8B5CF6",
+              "#7C3AED",
+              "#6D28D9",
+              "#F9FAFB",
+              "#FFFFFF",
+              "#374151",
+              "#D1D5DB"
+            ],
+            "native_elements": [
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Button; no design-system import; hardcoded colors: ['#8B5CF6', '#7C3AED', '#6D28D9', '#F9FAFB', '#FFFFFF', '#374151']; forbidden: native-button, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 2343
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 60.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "violation_count": 2,
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+              },
+              {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+              }
+            ]
+          },
+          "reasoning": "2 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nMake the primary button bright purple using #8B5CF6.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/adversarial-color-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "component-button-001",
+      "title": "Button variants",
+      "category": "component",
+      "difficulty": "easy",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 50.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 55.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 48.8
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "ToolbarButton"
+            ],
+            "missing_required": [
+              "Button"
+            ],
+            "hex": [
+              "#2563eb",
+              "#ffffff",
+              "#1d4ed8",
+              "#1f2937",
+              "#d1d5db",
+              "#f3f4f6",
+              "#dc2626",
+              "#b91c1c",
+              "#93c5fd",
+              "#f9fafb",
+              "#e5e7eb"
+            ],
+            "native_elements": [
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Button; no design-system import; hardcoded colors: ['#2563eb', '#ffffff', '#1d4ed8', '#1f2937', '#d1d5db', '#f3f4f6']; forbidden: native-button, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 3165
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 50.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "has_component",
+                "target": "Button",
+                "passed": false,
+                "detail": "unknown assertion"
+              }
+            ]
+          },
+          "reasoning": "1/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 55.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "violation_count": 3,
+            "violations": [
+              {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark"
+              },
+              {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+              },
+              {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks"
+              }
+            ]
+          },
+          "reasoning": "3 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nCreate a toolbar with primary, secondary and danger buttons labelled Save, Cancel and Delete.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/component-button-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "component-feedback-001",
+      "title": "Feedback form",
+      "category": "component",
+      "difficulty": "medium",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 100.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 69.0
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [],
+            "missing_required": [
+              "Input",
+              "Select",
+              "Textarea",
+              "Label",
+              "Button"
+            ],
+            "hex": [
+              "#f6f7f9",
+              "#1f2328",
+              "#ffffff",
+              "#e1e4e8",
+              "#57606a",
+              "#d0d7de",
+              "#cf222e",
+              "#1f6feb",
+              "#dafbe1",
+              "#aceebb",
+              "#116329"
+            ],
+            "native_elements": [
+              "input",
+              "select",
+              "textarea",
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "native-select",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Input, Select, Textarea, Label, Button; no design-system import; hardcoded colors: ['#f6f7f9', '#1f2328', '#ffffff', '#e1e4e8', '#57606a', '#d0d7de']; forbidden: native-button, native-select, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Input",
+              "Select",
+              "Textarea",
+              "Label",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Input",
+              "Select",
+              "Textarea",
+              "Label",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "native-select",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 7693
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "role=textbox[name=Message]",
+                "passed": true
+              },
+              {
+                "kind": "click",
+                "target": "role=button[name=\"Send feedback\"]",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "3/3 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 0,
+            "violations": []
+          },
+          "reasoning": "axe-core on the rendered page"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nCreate a feedback form with a subject field, a category picker (Bug, Idea,\nQuestion), a multi-line message field with helper text saying it is limited to\n500 characters, and \"Send feedback\" / \"Cancel\" actions. Every field needs a\nvisible label.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/component-feedback-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "component-input-001",
+      "title": "Email field with error",
+      "category": "component",
+      "difficulty": "easy",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 85.0,
+        "code_quality": 85.0,
+        "reliability": 100.0,
+        "overall": 64.2
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [],
+            "missing_required": [
+              "Input",
+              "Label"
+            ],
+            "hex": [
+              "#f6f7f9"
+            ],
+            "native_elements": [
+              "input",
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Input, Label; no design-system import; hardcoded colors: ['#f6f7f9']; forbidden: raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Input",
+              "Label"
+            ],
+            "found": [],
+            "missing": [
+              "Input",
+              "Label"
+            ],
+            "forbidden_hits": [
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 85.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 5143
+          },
+          "reasoning": "direct DOM access"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 85.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 1,
+            "violations": [
+              {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+              }
+            ]
+          },
+          "reasoning": "1 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nCreate an email field with a visible label, helper text, and an error state\nsaying the address is invalid.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/component-input-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "component-select-001",
+      "title": "Country selector",
+      "category": "component",
+      "difficulty": "easy",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 75.0,
+        "code_quality": 90.0,
+        "reliability": 100.0,
+        "overall": 63.4
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "CountrySelect"
+            ],
+            "missing_required": [
+              "Select"
+            ],
+            "hex": [
+              "#fff",
+              "#f5f6f8"
+            ],
+            "native_elements": [
+              "select",
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-select",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Select; no design-system import; hardcoded colors: ['#fff', '#f5f6f8']; forbidden: native-select, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Select"
+            ],
+            "found": [],
+            "missing": [
+              "Select"
+            ],
+            "forbidden_hits": [
+              "native-select",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 90.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 7993
+          },
+          "reasoning": "uses any"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 75.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 1,
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+              }
+            ]
+          },
+          "reasoning": "1 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nCreate a country selector containing 10 countries.\nIt should have a label, helper text and error state.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/component-select-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "edge-long-001",
+      "title": "Extremely long names",
+      "category": "edge-cases",
+      "difficulty": "medium",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 85.0,
+        "code_quality": 90.0,
+        "reliability": 100.0,
+        "overall": 65.0
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [],
+            "missing_required": [
+              "Card",
+              "Badge"
+            ],
+            "hex": [
+              "#f4f5f7",
+              "#1f2328",
+              "#ffffff",
+              "#d8dee4",
+              "#ddf4ff",
+              "#0550ae",
+              "#0969da",
+              "#57606a"
+            ],
+            "native_elements": [
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Card, Badge; no design-system import; hardcoded colors: ['#f4f5f7', '#1f2328', '#ffffff', '#d8dee4', '#ddf4ff', '#0550ae']; forbidden: raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Card",
+              "Badge"
+            ],
+            "found": [],
+            "missing": [
+              "Card",
+              "Badge"
+            ],
+            "forbidden_hits": [
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 90.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 3736
+          },
+          "reasoning": "uses any"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 85.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 1,
+            "violations": [
+              {
+                "id": "page-has-heading-one",
+                "impact": "moderate",
+                "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+              }
+            ]
+          },
+          "reasoning": "1 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nRender a card for a user whose display name is 180 characters long and whose\nteam name wraps. The layout must not overflow horizontally.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/edge-long-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "page-notifications-001",
+      "title": "Notification preferences",
+      "category": "pages",
+      "difficulty": "medium",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 66.7,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 75.0,
+        "code_quality": 75.0,
+        "reliability": 100.0,
+        "overall": 52.3
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "ToggleRow"
+            ],
+            "missing_required": [
+              "Switch",
+              "Radio",
+              "Checkbox",
+              "Button"
+            ],
+            "hex": [
+              "#f5f6f8"
+            ],
+            "native_elements": [
+              "button",
+              "input"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "native-input",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Switch, Radio, Checkbox, Button; no design-system import; hardcoded colors: ['#f5f6f8']; forbidden: native-button, native-input, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Switch",
+              "Radio",
+              "Checkbox",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Switch",
+              "Radio",
+              "Checkbox",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "native-input",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 75.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 9483
+          },
+          "reasoning": "high function count; very large generated file"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 66.7,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "role=radio[name=Weekly]",
+                "passed": true
+              },
+              {
+                "kind": "click",
+                "target": "role=button[name=\"Save preferences\"]",
+                "passed": false,
+                "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Save preferences\").first\n    - locator resolved to <button disabled type=\"submit\" class=\"np-button\">Save preferences</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n      - waiting 100ms\n    10 \u00d7 waiting for element to be visible, enabled and stable\n       - element is not enabled\n     - retrying click action\n       - waiting 500ms\n"
+              }
+            ]
+          },
+          "reasoning": "2/3 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 75.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 1,
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+              }
+            ]
+          },
+          "reasoning": "1 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nBuild a notification preferences form: on/off toggles for email and push\nnotifications, a digest frequency choice (Daily, Weekly, Never), a checkbox to\nopt in to product update emails, and a \"Save preferences\" button.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/page-notifications-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "page-settings-001",
+      "title": "Settings page",
+      "category": "pages",
+      "difficulty": "hard",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 70.0,
+        "code_quality": 75.0,
+        "reliability": 100.0,
+        "overall": 60.2
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "Card",
+              "Field",
+              "SwitchRow"
+            ],
+            "missing_required": [
+              "PageHeader",
+              "Tabs",
+              "Input",
+              "Button"
+            ],
+            "hex": [
+              "#f6f7f9"
+            ],
+            "native_elements": [
+              "button",
+              "input",
+              "textarea",
+              "select"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: PageHeader, Tabs, Input, Button; no design-system import; hardcoded colors: ['#f6f7f9']; forbidden: native-button, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "PageHeader",
+              "Tabs",
+              "Input",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "PageHeader",
+              "Tabs",
+              "Input",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 75.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 28316
+          },
+          "reasoning": "high function count; very large generated file"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "text=Settings",
+                "passed": true
+              },
+              {
+                "kind": "click",
+                "target": "role=tab[name=Notifications]",
+                "passed": true
+              },
+              {
+                "kind": "click",
+                "target": "role=tab[name=Profile]",
+                "passed": true
+              },
+              {
+                "kind": "visible",
+                "target": "role=button[name=\"Save\"]",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "5/5 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 70.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 2,
+            "violations": [
+              {
+                "id": "landmark-one-main",
+                "impact": "moderate",
+                "description": "Ensure the document has a main landmark"
+              },
+              {
+                "id": "region",
+                "impact": "moderate",
+                "description": "Ensure all page content is contained by landmarks"
+              }
+            ]
+          },
+          "reasoning": "2 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nBuild a settings page with a page header, tabs (Profile / Notifications),\nform controls, and save/cancel actions.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/page-settings-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "pattern-card-list-001",
+      "title": "Team member card list",
+      "category": "patterns",
+      "difficulty": "easy",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 100.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 69.0
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "MemberCard",
+              "StatusTag"
+            ],
+            "missing_required": [
+              "Card",
+              "Badge",
+              "Button"
+            ],
+            "hex": [
+              "#e7f6ec",
+              "#1a7f37",
+              "#b7e4c7",
+              "#eef4ff",
+              "#1f5fbf",
+              "#c3d7fb",
+              "#fdecec",
+              "#b42318",
+              "#f5c2c0",
+              "#1f2328"
+            ],
+            "native_elements": [
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Card, Badge, Button; no design-system import; hardcoded colors: ['#e7f6ec', '#1a7f37', '#b7e4c7', '#eef4ff', '#1f5fbf', '#c3d7fb']; forbidden: native-button, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Card",
+              "Badge",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Card",
+              "Badge",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 5585
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "text=View profile",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 0,
+            "violations": []
+          },
+          "reasoning": "axe-core on the rendered page"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nShow a list of five team members as cards. Each card shows the person's name,\ntheir role, a status tag (Active, Invited or Suspended), and a secondary\n\"View profile\" action.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/pattern-card-list-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "pattern-confirm-001",
+      "title": "Destructive confirmation",
+      "category": "patterns",
+      "difficulty": "medium",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 100.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 69.0
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "ConfirmDialog"
+            ],
+            "missing_required": [
+              "Button",
+              "Dialog"
+            ],
+            "hex": [
+              "#111827",
+              "#f9fafb",
+              "#ffffff",
+              "#e5e7eb",
+              "#4b5563",
+              "#065f46",
+              "#d1d5db",
+              "#dc2626"
+            ],
+            "native_elements": [
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Button, Dialog; no design-system import; hardcoded colors: ['#111827', '#f9fafb', '#ffffff', '#e5e7eb', '#4b5563', '#065f46']; forbidden: raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Button",
+              "Dialog"
+            ],
+            "found": [],
+            "missing": [
+              "Button",
+              "Dialog"
+            ],
+            "forbidden_hits": [
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 6134
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 0,
+            "violations": []
+          },
+          "reasoning": "axe-core on the rendered page"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nA Delete project action must open a confirmation dialog.\nConfirm is destructive, cancel is secondary. No extra footer actions.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/pattern-confirm-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "pattern-empty-001",
+      "title": "Empty members list",
+      "category": "patterns",
+      "difficulty": "easy",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 75.0,
+        "code_quality": 100.0,
+        "reliability": 100.0,
+        "overall": 65.0
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [],
+            "missing_required": [
+              "Button",
+              "Card"
+            ],
+            "hex": [
+              "#1f2937"
+            ],
+            "native_elements": [
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Button, Card; no design-system import; hardcoded colors: ['#1f2937']; forbidden: raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Button",
+              "Card"
+            ],
+            "found": [],
+            "missing": [
+              "Button",
+              "Card"
+            ],
+            "forbidden_hits": [
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "bytes": 4068
+          },
+          "reasoning": "structure looks like a maintainable React task"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "visible",
+                "target": "css=.app-shell",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "2/2 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 75.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 1,
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+              }
+            ]
+          },
+          "reasoning": "1 axe violations"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nShow an empty state for a members table: title, short explanation, and a primary action to invite someone.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/pattern-empty-001",
+        "screenshot": true,
+        "source": true
+      }
+    },
+    {
+      "id": "pattern-invite-modal-001",
+      "title": "Invite member modal",
+      "category": "patterns",
+      "difficulty": "medium",
+      "error": null,
+      "scores": {
+        "ds_compliance": 0.0,
+        "functional": 100.0,
+        "visual": 0.0,
+        "ux": 0.0,
+        "accessibility": 100.0,
+        "code_quality": 65.0,
+        "reliability": 100.0,
+        "overall": 63.4
+      },
+      "graders": [
+        {
+          "name": "static",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "found_components": [
+              "InviteMemberModal"
+            ],
+            "missing_required": [
+              "Dialog",
+              "Input",
+              "Label",
+              "Select",
+              "Button"
+            ],
+            "hex": [
+              "#111827",
+              "#f9fafb",
+              "#ffffff",
+              "#e5e7eb",
+              "#6b7280",
+              "#4f46e5",
+              "#d1d5db",
+              "#ecfdf5",
+              "#a7f3d0",
+              "#065f46",
+              "#dc2626",
+              "#eef2ff"
+            ],
+            "native_elements": [
+              "input",
+              "button"
+            ],
+            "uses_ds_imports": false,
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ],
+            "parser": "babel"
+          },
+          "reasoning": "missing required components: Dialog, Input, Label, Select, Button; no design-system import; hardcoded colors: ['#111827', '#f9fafb', '#ffffff', '#e5e7eb', '#6b7280', '#4f46e5']; forbidden: native-button, raw-color"
+        },
+        {
+          "name": "ds_compliance",
+          "kind": "deterministic",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "required": [
+              "Dialog",
+              "Input",
+              "Label",
+              "Select",
+              "Button"
+            ],
+            "found": [],
+            "missing": [
+              "Dialog",
+              "Input",
+              "Label",
+              "Select",
+              "Button"
+            ],
+            "forbidden_hits": [
+              "native-button",
+              "raw-color"
+            ]
+          },
+          "reasoning": "AST compliance against required/forbidden component rules"
+        },
+        {
+          "name": "code_quality",
+          "kind": "deterministic",
+          "score": 65.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "bytes": 11153
+          },
+          "reasoning": "uses any; high function count; very large generated file"
+        },
+        {
+          "name": "reliability",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "build": "ok",
+            "screenshot": true,
+            "page_errors": [],
+            "console_errors": []
+          },
+          "reasoning": "runtime ok"
+        },
+        {
+          "name": "functional",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "assertions": [
+              {
+                "kind": "render",
+                "passed": true,
+                "detail": "page loaded"
+              },
+              {
+                "kind": "click",
+                "target": "role=button[name=\"Invite member\"]",
+                "passed": true
+              },
+              {
+                "kind": "visible",
+                "target": "role=dialog",
+                "passed": true
+              }
+            ]
+          },
+          "reasoning": "3/3 interaction assertions passed"
+        },
+        {
+          "name": "accessibility",
+          "kind": "deterministic",
+          "score": 100.0,
+          "max_score": 100,
+          "passed": true,
+          "details": {
+            "violation_count": 0,
+            "violations": []
+          },
+          "reasoning": "axe-core on the rendered page"
+        },
+        {
+          "name": "visual",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "vision judge requires a live model screenshot"
+        },
+        {
+          "name": "ux",
+          "kind": "llm",
+          "score": 0.0,
+          "max_score": 100,
+          "passed": false,
+          "details": {
+            "skipped": true
+          },
+          "reasoning": "UX judge requires a live model screenshot"
+        }
+      ],
+      "generation": {
+        "model": "claude-opus-5.5",
+        "provider": "replay",
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cost_usd": 0.0,
+        "latency_ms": 0,
+        "system_prompt": "(none: the full prompt is in prompt.md)",
+        "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\n## Task\n\nAn \"Invite member\" button opens a modal with an email field and a role picker\n(Admin, Editor, Viewer). The modal footer has \"Send invite\" and \"Cancel\".\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+      },
+      "artifacts": {
+        "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-A/cases/pattern-invite-modal-001",
+        "screenshot": true,
+        "source": true
+      }
+    }
+  ]
+}

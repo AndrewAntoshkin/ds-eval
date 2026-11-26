@@ -1,0 +1,170 @@
+[
+  {
+    "name": "static",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "found_components": [
+        "Button",
+        "Card",
+        "Checkbox",
+        "Field",
+        "Input",
+        "PageHeader",
+        "Select",
+        "Switch",
+        "Tabs",
+        "Textarea"
+      ],
+      "missing_required": [],
+      "hex": [],
+      "native_elements": [],
+      "uses_ds_imports": true,
+      "forbidden_hits": [],
+      "parser": "babel"
+    },
+    "reasoning": "AST shows DS imports and no token violations"
+  },
+  {
+    "name": "ds_compliance",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "required": [
+        "PageHeader",
+        "Tabs",
+        "Input",
+        "Button"
+      ],
+      "found": [
+        "PageHeader",
+        "Tabs",
+        "Input",
+        "Button"
+      ],
+      "missing": [],
+      "forbidden_hits": []
+    },
+    "reasoning": "AST compliance against required/forbidden component rules"
+  },
+  {
+    "name": "code_quality",
+    "kind": "deterministic",
+    "score": 90.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "bytes": 8143
+    },
+    "reasoning": "high function count"
+  },
+  {
+    "name": "reliability",
+    "kind": "deterministic",
+    "score": 40.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "build": "ok",
+      "screenshot": true,
+      "page_errors": [
+        "Minified React error #31; visit https://reactjs.org/docs/error-decoder.html?invariant=31&args[]=object%20with%20keys%20%7Bid%2C%20label%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ],
+      "console_errors": [
+        "Error: Minified React error #31; visit https://reactjs.org/docs/error-decoder.html?invariant=31&args[]=object%20with%20keys%20%7Bid%2C%20label%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at pr (http://127.0.0.1:53155/assets/index-BCawgsUw.js:38:6290)\n    at M (http://127.0.0.1:53155/assets/index-BCawgsUw.js:38:11350)\n    at ue (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:1475)\n    at uc (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:45397)\n    at nc (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:39499)\n    at Pd (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:39430)\n    at qr (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:39289)\n    at Uu (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:35710)\n    at ba (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:34666)\n    at g (http://127.0.0.1:53155/assets/index-BCawgsUw.js:25:1562)",
+        "Error: Minified React error #31; visit https://reactjs.org/docs/error-decoder.html?invariant=31&args[]=object%20with%20keys%20%7Bid%2C%20label%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings.\n    at pr (http://127.0.0.1:53155/assets/index-BCawgsUw.js:38:6290)\n    at M (http://127.0.0.1:53155/assets/index-BCawgsUw.js:38:11350)\n    at ue (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:1475)\n    at uc (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:45397)\n    at nc (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:39499)\n    at Pd (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:39430)\n    at qr (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:39289)\n    at Uu (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:35710)\n    at ba (http://127.0.0.1:53155/assets/index-BCawgsUw.js:40:34666)\n    at g (http://127.0.0.1:53155/assets/index-BCawgsUw.js:25:1562)"
+      ]
+    },
+    "reasoning": "Minified React error #31; visit https://reactjs.org/docs/error-decoder.html?invariant=31&args[]=object%20with%20keys%20%7Bid%2C%20label%7D for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+  },
+  {
+    "name": "functional",
+    "kind": "deterministic",
+    "score": 20.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "assertions": [
+        {
+          "kind": "render",
+          "passed": true,
+          "detail": "page loaded"
+        },
+        {
+          "kind": "visible",
+          "target": "text=Settings",
+          "passed": false,
+          "detail": "Locator.wait_for: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"Settings\").first to be visible\n"
+        },
+        {
+          "kind": "click",
+          "target": "role=tab[name=Notifications]",
+          "passed": false,
+          "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"tab\", name=\"Notifications\").first\n"
+        },
+        {
+          "kind": "click",
+          "target": "role=tab[name=Profile]",
+          "passed": false,
+          "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"tab\", name=\"Profile\").first\n"
+        },
+        {
+          "kind": "visible",
+          "target": "role=button[name=\"Save\"]",
+          "passed": false,
+          "detail": "Locator.wait_for: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Save\").first to be visible\n"
+        }
+      ]
+    },
+    "reasoning": "1/5 interaction assertions passed"
+  },
+  {
+    "name": "accessibility",
+    "kind": "deterministic",
+    "score": 70.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "violation_count": 2,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "description": "Ensure the document has a main landmark"
+        },
+        {
+          "id": "page-has-heading-one",
+          "impact": "moderate",
+          "description": "Ensure that the page, or at least one of its frames contains a level-one heading"
+        }
+      ]
+    },
+    "reasoning": "2 axe violations"
+  },
+  {
+    "name": "visual",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "vision judge requires a live model screenshot"
+  },
+  {
+    "name": "ux",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "UX judge requires a live model screenshot"
+  }
+]

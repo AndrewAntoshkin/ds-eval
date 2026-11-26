@@ -1,0 +1,172 @@
+{
+  "id": "pattern-card-list-001",
+  "title": "Team member card list",
+  "category": "patterns",
+  "difficulty": "easy",
+  "error": null,
+  "scores": {
+    "ds_compliance": 100.0,
+    "functional": 100.0,
+    "visual": 0.0,
+    "ux": 0.0,
+    "accessibility": 70.0,
+    "code_quality": 100.0,
+    "reliability": 100.0,
+    "overall": 95.2
+  },
+  "graders": [
+    {
+      "name": "static",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "found_components": [
+          "Badge",
+          "Button",
+          "Card",
+          "Dialog",
+          "PageHeader",
+          "useDialog"
+        ],
+        "missing_required": [],
+        "hex": [],
+        "native_elements": [],
+        "uses_ds_imports": true,
+        "forbidden_hits": [],
+        "parser": "babel"
+      },
+      "reasoning": "AST shows DS imports and no token violations"
+    },
+    {
+      "name": "ds_compliance",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "required": [
+          "Card",
+          "Badge",
+          "Button"
+        ],
+        "found": [
+          "Card",
+          "Badge",
+          "Button"
+        ],
+        "missing": [],
+        "forbidden_hits": []
+      },
+      "reasoning": "AST compliance against required/forbidden component rules"
+    },
+    {
+      "name": "code_quality",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "bytes": 3663
+      },
+      "reasoning": "structure looks like a maintainable React task"
+    },
+    {
+      "name": "reliability",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "build": "ok",
+        "screenshot": true,
+        "page_errors": [],
+        "console_errors": []
+      },
+      "reasoning": "runtime ok"
+    },
+    {
+      "name": "functional",
+      "kind": "deterministic",
+      "score": 100.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "assertions": [
+          {
+            "kind": "render",
+            "passed": true,
+            "detail": "page loaded"
+          },
+          {
+            "kind": "visible",
+            "target": "text=View profile",
+            "passed": true
+          }
+        ]
+      },
+      "reasoning": "2/2 interaction assertions passed"
+    },
+    {
+      "name": "accessibility",
+      "kind": "deterministic",
+      "score": 70.0,
+      "max_score": 100,
+      "passed": true,
+      "details": {
+        "violation_count": 2,
+        "violations": [
+          {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "description": "Ensure the document has a main landmark"
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks"
+          }
+        ]
+      },
+      "reasoning": "2 axe violations"
+    },
+    {
+      "name": "visual",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "vision judge requires a live model screenshot"
+    },
+    {
+      "name": "ux",
+      "kind": "llm",
+      "score": 0.0,
+      "max_score": 100,
+      "passed": false,
+      "details": {
+        "skipped": true
+      },
+      "reasoning": "UX judge requires a live model screenshot"
+    }
+  ],
+  "generation": {
+    "model": "claude-opus-5.5",
+    "provider": "replay",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 0,
+    "system_prompt": "(none: the full prompt is in prompt.md)",
+    "task_prompt": "You are writing UI code for an existing React 18 + TypeScript app (Vite).\n\nThis project has a design system. Build the UI with it. Its machine-readable design-system artifact (component API, tokens, anti-patterns) follows.\n\n```json\n{\n  \"schema\": \"ds-eval/design-system-artifact@1\",\n  \"name\": \"Demo DS\",\n  \"version\": \"1.0\",\n  \"derived_from\": [\n    \"src/components/index.tsx\",\n    \"src/components/components.css\",\n    \"src/tokens.css\",\n    \"docs/components.md\",\n    \"docs/rules.md\"\n  ],\n  \"import\": {\n    \"module\": \"@ds\",\n    \"example\": \"import { Button, Card } from \\\"@ds\\\";\"\n  },\n  \"host\": {\n    \"framework\": \"React 18 + TypeScript (Vite)\",\n    \"page_root\": \"src/task/Task.tsx must export function Task(); it is rendered inside <div className=\\\"app-shell\\\">\",\n    \"global_css\": [\"src/tokens.css\", \"src/components/components.css\"]\n  },\n  \"components\": [\n    {\n      \"name\": \"Button\",\n      \"kind\": \"component\",\n      \"renders\": \"<button class=\\\"ds-btn ds-btn-{variant}\\\">\",\n      \"props\": {\n        \"variant\": { \"type\": \"\\\"primary\\\" | \\\"secondary\\\" | \\\"danger\\\" | \\\"ghost\\\"\", \"required\": false, \"default\": \"primary\" },\n        \"children\": { \"type\": \"ReactNode\", \"required\": false },\n        \"...rest\": { \"type\": \"ButtonHTMLAttributes<HTMLButtonElement>\", \"notes\": \"onClick, type, disabled, aria-* are forwarded\" }\n      },\n      \"usage\": \"All clickable actions. One primary per area; secondary for cancel/alternate; danger for destructive; ghost for low emphasis.\",\n      \"notes\": [\"No default type attribute is set; pass type=\\\"button\\\" inside a <form> unless it should submit.\"]\n    },\n    {\n      \"name\": \"Label\",\n      \"kind\": \"component\",\n      \"renders\": \"<label class=\\\"ds-label\\\" for={htmlFor}>\",\n      \"props\": {\n        \"htmlFor\": { \"type\": \"string\", \"required\": false },\n        \"children\": { \"type\": \"ReactNode\", \"required\": true }\n      },\n      \"usage\": \"Visible label for Input/Textarea. Set htmlFor to the control id.\"\n    },\n    {\n      \"name\": \"HelperText\",\n      \"kind\": \"component\",\n      \"renders\": \"<p class=\\\"ds-help\\\"> or <p class=\\\"ds-help ds-help-error\\\">\",\n      \"props\": {\n        \"error\": { \"type\": \"boolean\", \"required\": false },\n        \"children\": { \"type\": \"ReactNode\", \"required\": true }\n      },\n      \"usage\": \"Hint below a control; error=true for validation messages.\"\n    },\n    {\n      \"name\": \"Input\",\n      \"kind\": \"component\",\n      \"renders\": \"<input class=\\\"ds-input [is-invalid]\\\" aria-invalid={invalid}>\",\n      \"props\": {\n        \"invalid\": { \"type\": \"boolean\", \"required\": false },\n        \"id\": { \"type\": \"string\", \"required\": false },\n        \"...rest\": { \"type\": \"InputHTMLAttributes<HTMLInputElement>\", \"notes\": \"type, value, onChange, placeholder, aria-describedby, etc.\" }\n      },\n      \"usage\": \"Single-line text entry. Pair with <Label htmlFor={id}> and optional <HelperText>.\"\n    },\n    {\n      \"name\": \"Textarea\",\n      \"kind\": \"component\",\n      \"renders\": \"<textarea class=\\\"ds-input [is-invalid]\\\" aria-invalid={invalid}>\",\n      \"props\": {\n        \"invalid\": { \"type\": \"boolean\", \"required\": false },\n        \"...rest\": { \"type\": \"TextareaHTMLAttributes<HTMLTextAreaElement>\", \"notes\": \"id, rows, maxLength, value, onChange, etc.\" }\n      },\n      \"usage\": \"Multi-line text entry. Pair with <Label htmlFor={id}> and optional <HelperText>.\"\n    },\n    {\n      \"name\": \"Select\",\n      \"kind\": \"component\",\n      \"renders\": \"<div class=\\\"ds-field\\\"><Label/><select class=\\\"ds-input\\\"/><HelperText/></div>\",\n      \"props\": {\n        \"label\": { \"type\": \"string\", \"required\": true },\n        \"helper\": { \"type\": \"string\", \"required\": false },\n        \"error\": { \"type\": \"string\", \"required\": false, \"notes\": \"When set, shown instead of helper and marks the select invalid\" },\n        \"children\": { \"type\": \"ReactNode\", \"required\": false, \"notes\": \"<option> elements\" },\n        \"id\": { \"type\": \"string\", \"required\": false, \"notes\": \"Auto-generated with useId when omitted; label is associated automatically\" },\n        \"...rest\": { \"type\": \"SelectHTMLAttributes<HTMLSelectElement>\", \"notes\": \"value, onChange, defaultValue, etc.\" }\n      },\n      \"usage\": \"Any pick-one-from-a-list control. Includes its own label/helper/error; do not wrap it in another Label.\"\n    },\n    {\n      \"name\": \"Checkbox\",\n      \"kind\": \"component\",\n      \"renders\": \"<label class=\\\"ds-choice\\\"><input type=\\\"checkbox\\\"/><span>{label}</span></label>\",\n      \"props\": {\n        \"label\": { \"type\": \"string\", \"required\": true },\n        \"...rest\": { \"type\": \"InputHTMLAttributes<HTMLInputElement>\", \"notes\": \"checked, defaultChecked, onChange, name\" }\n      },\n      \"usage\": \"Independent opt-in choices.\"\n    },\n    {\n      \"name\": \"Radio\",\n      \"kind\": \"component\",\n      \"renders\": \"<label class=\\\"ds-choice\\\"><input type=\\\"radio\\\"/><span>{label}</span></label>\",\n      \"props\": {\n        \"label\": { \"type\": \"string\", \"required\": true },\n        \"...rest\": { \"type\": \"InputHTMLAttributes<HTMLInputElement>\", \"notes\": \"name, value, checked, onChange\" }\n      },\n      \"usage\": \"One choice from a small set. Give all radios in a group the same name.\"\n    },\n    {\n      \"name\": \"Switch\",\n      \"kind\": \"component\",\n      \"renders\": \"<label class=\\\"ds-choice\\\"><input type=\\\"checkbox\\\" role=\\\"switch\\\"/><span>{label}</span></label>\",\n      \"props\": {\n        \"label\": { \"type\": \"string\", \"required\": true },\n        \"checked\": { \"type\": \"boolean\", \"required\": true },\n        \"onChange\": { \"type\": \"(value: boolean) => void\", \"required\": true, \"notes\": \"Receives the new boolean, not an event\" }\n      },\n      \"usage\": \"Instant on/off settings.\"\n    },\n    {\n      \"name\": \"Tabs\",\n      \"kind\": \"component\",\n      \"renders\": \"<div class=\\\"ds-tabs\\\" role=\\\"tablist\\\"> with one <button role=\\\"tab\\\" aria-selected> per tab\",\n      \"props\": {\n        \"tabs\": { \"type\": \"string[]\", \"required\": true, \"notes\": \"Tab labels; also used as values\" },\n        \"value\": { \"type\": \"string\", \"required\": true },\n        \"onChange\": { \"type\": \"(value: string) => void\", \"required\": true }\n      },\n      \"usage\": \"Switch between sections of one page. Renders only the tab strip; render the active panel yourself based on value.\"\n    },\n    {\n      \"name\": \"Dialog\",\n      \"kind\": \"component\",\n      \"renders\": \"null when closed; otherwise backdrop <button aria-label=\\\"Close\\\"> + <div role=\\\"dialog\\\" aria-modal=\\\"true\\\"> with an <h2> title\",\n      \"props\": {\n        \"open\": { \"type\": \"boolean\", \"required\": true },\n        \"title\": { \"type\": \"string\", \"required\": true },\n        \"children\": { \"type\": \"ReactNode\", \"required\": true },\n        \"onClose\": { \"type\": \"() => void\", \"required\": true, \"notes\": \"Called when the backdrop is clicked\" }\n      },\n      \"usage\": \"Modal confirmations and short forms. No built-in footer: render actions in children, e.g. <div className=\\\"ds-row\\\">. Footer allows one primary + one secondary action.\"\n    },\n    {\n      \"name\": \"Badge\",\n      \"kind\": \"component\",\n      \"renders\": \"<span class=\\\"ds-badge\\\">\",\n      \"props\": { \"children\": { \"type\": \"ReactNode\", \"required\": true } },\n      \"usage\": \"Small status or metadata pill. No color variants.\"\n    },\n    {\n      \"name\": \"Card\",\n      \"kind\": \"component\",\n      \"renders\": \"<section class=\\\"ds-card\\\">\",\n      \"props\": { \"children\": { \"type\": \"ReactNode\", \"required\": true } },\n      \"usage\": \"Surface container for grouped content.\"\n    },\n    {\n      \"name\": \"PageHeader\",\n      \"kind\": \"component\",\n      \"renders\": \"<header class=\\\"ds-page-header\\\"><h1>{title}</h1><p>{description}</p><div class=\\\"ds-page-actions\\\">{actions}</div></header>\",\n      \"props\": {\n        \"title\": { \"type\": \"string\", \"required\": true },\n        \"description\": { \"type\": \"string\", \"required\": false },\n        \"actions\": { \"type\": \"ReactNode\", \"required\": false }\n      },\n      \"usage\": \"Top of a page: title, optional description and page-level actions.\"\n    },\n    {\n      \"name\": \"Field\",\n      \"kind\": \"component\",\n      \"renders\": \"<div class=\\\"ds-field\\\"><Label>{label}</Label>{children}<HelperText/></div>\",\n      \"props\": {\n        \"label\": { \"type\": \"string\", \"required\": true },\n        \"helper\": { \"type\": \"string\", \"required\": false },\n        \"error\": { \"type\": \"string\", \"required\": false, \"notes\": \"When set, shown instead of helper\" },\n        \"children\": { \"type\": \"ReactNode\", \"required\": true }\n      },\n      \"usage\": \"Layout wrapper for label + control + helper/error.\",\n      \"notes\": [\"The rendered Label has no htmlFor, so it is not programmatically associated with the child control.\"]\n    },\n    {\n      \"name\": \"useDialog\",\n      \"kind\": \"hook\",\n      \"signature\": \"useDialog(): { open: boolean; openDialog: () => void; close: () => void }\",\n      \"usage\": \"Open/close state for Dialog.\"\n    }\n  ],\n  \"layout_classes\": {\n    \"ds-stack\": \"display: grid; gap: var(--space-4)\",\n    \"ds-row\": \"display: flex; gap: var(--space-3); justify-content: flex-end\",\n    \"app-shell\": \"page container provided by the host (min-height: 100%; padding: var(--space-6))\"\n  },\n  \"tokens\": {\n    \"color\": {\n      \"--color-bg\": \"#0f1115\",\n      \"--color-surface\": \"#171a21\",\n      \"--color-surface-2\": \"#1e2330\",\n      \"--color-text\": \"#e8eaed\",\n      \"--color-text-muted\": \"#9aa3b2\",\n      \"--color-primary\": \"#2dd4bf\",\n      \"--color-primary-text\": \"#042f2e\",\n      \"--color-danger\": \"#f87171\",\n      \"--color-border\": \"#2a3140\",\n      \"--color-focus\": \"#5eead4\"\n    },\n    \"space\": {\n      \"--space-1\": \"4px\",\n      \"--space-2\": \"8px\",\n      \"--space-3\": \"12px\",\n      \"--space-4\": \"16px\",\n      \"--space-5\": \"24px\",\n      \"--space-6\": \"32px\"\n    },\n    \"radius\": {\n      \"--radius-sm\": \"6px\",\n      \"--radius-md\": \"10px\",\n      \"--radius-lg\": \"14px\"\n    },\n    \"typography\": {\n      \"--font-sans\": \"Inter, system-ui, sans-serif\",\n      \"--font-size-sm\": \"13px\",\n      \"--font-size-md\": \"14px\",\n      \"--font-size-lg\": \"18px\",\n      \"--font-size-xl\": \"28px\"\n    },\n    \"other\": {\n      \"--shadow-md\": \"0 12px 32px -16px rgba(0, 0, 0, 0.5)\",\n      \"--control-height\": \"40px\"\n    },\n    \"usage\": \"Reference tokens as CSS variables, e.g. var(--space-4). Token values are listed for reference only; never copy them into product UI.\"\n  },\n  \"anti_patterns\": [\n    { \"id\": \"native-button\", \"detect\": \"<button> in product UI\", \"instead\": \"Button\" },\n    { \"id\": \"native-select\", \"detect\": \"<select> in product UI\", \"instead\": \"Select\" },\n    { \"id\": \"recreated-component\", \"detect\": \"Hand-rolled control or local component that duplicates a @ds export (e.g. a local Card, or a raw <input type=\\\"checkbox\\\">)\", \"instead\": \"Import the existing component from @ds\" },\n    { \"id\": \"raw-color\", \"detect\": \"Hex, rgb() or hsl() color literals in product UI\", \"instead\": \"var(--color-*) tokens\" },\n    { \"id\": \"raw-spacing\", \"detect\": \"Raw px values for spacing, radius or font size\", \"instead\": \"var(--space-*), var(--radius-*), var(--font-size-*)\" },\n    { \"id\": \"placeholder-as-label\", \"detect\": \"Input whose only label is its placeholder\", \"instead\": \"Visible Label (htmlFor) or Select's label prop\" },\n    { \"id\": \"dialog-footer-overflow\", \"detect\": \"More than one primary and one secondary action in a Dialog footer\", \"instead\": \"Keep primary + secondary only\" },\n    { \"id\": \"unconfirmed-destructive\", \"detect\": \"Destructive action that runs immediately\", \"instead\": \"Button variant=\\\"danger\\\" that opens a confirmation Dialog\" }\n  ],\n  \"rules\": [\n    \"Tokens only: colors, spacing, radius, typography come from src/tokens.css.\",\n    \"No raw hex or rgb in product UI.\",\n    \"Do not use native <button> or <select> in product UI.\",\n    \"Do not recreate components that already exist.\",\n    \"Dialog footer: primary + secondary only. Never 6 actions.\",\n    \"Destructive actions use Button variant=\\\"danger\\\" and a confirmation Dialog.\",\n    \"Every input has a visible Label. Placeholder is not a label.\"\n  ]\n}\n```\n\n## Task\n\nShow a list of five team members as cards. Each card shows the person's name,\ntheir role, a status tag (Active, Invited or Suspended), and a secondary\n\"View profile\" action.\n\n## Output\n\nReturn exactly one file: `src/task/Task.tsx`. It must export a React function component named `Task`, which the app renders as the page root. Return only the file contents, with no explanation.\n"
+  },
+  "artifacts": {
+    "dir": "/workspace/runs/2026-11-26-claude-opus/scored/claude-opus-C/cases/pattern-card-list-001",
+    "screenshot": true,
+    "source": true
+  }
+}

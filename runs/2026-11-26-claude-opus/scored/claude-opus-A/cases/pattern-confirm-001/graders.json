@@ -1,0 +1,140 @@
+[
+  {
+    "name": "static",
+    "kind": "deterministic",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "found_components": [
+        "ConfirmDialog"
+      ],
+      "missing_required": [
+        "Button",
+        "Dialog"
+      ],
+      "hex": [
+        "#111827",
+        "#f9fafb",
+        "#ffffff",
+        "#e5e7eb",
+        "#4b5563",
+        "#065f46",
+        "#d1d5db",
+        "#dc2626"
+      ],
+      "native_elements": [
+        "button"
+      ],
+      "uses_ds_imports": false,
+      "forbidden_hits": [
+        "raw-color"
+      ],
+      "parser": "babel"
+    },
+    "reasoning": "missing required components: Button, Dialog; no design-system import; hardcoded colors: ['#111827', '#f9fafb', '#ffffff', '#e5e7eb', '#4b5563', '#065f46']; forbidden: raw-color"
+  },
+  {
+    "name": "ds_compliance",
+    "kind": "deterministic",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "required": [
+        "Button",
+        "Dialog"
+      ],
+      "found": [],
+      "missing": [
+        "Button",
+        "Dialog"
+      ],
+      "forbidden_hits": [
+        "raw-color"
+      ]
+    },
+    "reasoning": "AST compliance against required/forbidden component rules"
+  },
+  {
+    "name": "code_quality",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "bytes": 6134
+    },
+    "reasoning": "structure looks like a maintainable React task"
+  },
+  {
+    "name": "reliability",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "build": "ok",
+      "screenshot": true,
+      "page_errors": [],
+      "console_errors": []
+    },
+    "reasoning": "runtime ok"
+  },
+  {
+    "name": "functional",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "assertions": [
+        {
+          "kind": "render",
+          "passed": true,
+          "detail": "page loaded"
+        },
+        {
+          "kind": "visible",
+          "target": "css=.app-shell",
+          "passed": true
+        }
+      ]
+    },
+    "reasoning": "2/2 interaction assertions passed"
+  },
+  {
+    "name": "accessibility",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "violation_count": 0,
+      "violations": []
+    },
+    "reasoning": "axe-core on the rendered page"
+  },
+  {
+    "name": "visual",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "vision judge requires a live model screenshot"
+  },
+  {
+    "name": "ux",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "UX judge requires a live model screenshot"
+  }
+]

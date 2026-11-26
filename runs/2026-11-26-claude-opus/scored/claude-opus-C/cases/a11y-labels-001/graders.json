@@ -1,0 +1,136 @@
+[
+  {
+    "name": "static",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "found_components": [
+        "Button",
+        "Card",
+        "Checkbox",
+        "HelperText",
+        "Input",
+        "Label",
+        "PageHeader"
+      ],
+      "missing_required": [],
+      "hex": [],
+      "native_elements": [],
+      "uses_ds_imports": true,
+      "forbidden_hits": [],
+      "parser": "babel"
+    },
+    "reasoning": "AST shows DS imports and no token violations"
+  },
+  {
+    "name": "ds_compliance",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "required": [
+        "Input",
+        "Label",
+        "Button"
+      ],
+      "found": [
+        "Input",
+        "Label",
+        "Button"
+      ],
+      "missing": [],
+      "forbidden_hits": []
+    },
+    "reasoning": "AST compliance against required/forbidden component rules"
+  },
+  {
+    "name": "code_quality",
+    "kind": "deterministic",
+    "score": 85.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "bytes": 4600
+    },
+    "reasoning": "direct DOM access"
+  },
+  {
+    "name": "reliability",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "build": "ok",
+      "screenshot": true,
+      "page_errors": [],
+      "console_errors": []
+    },
+    "reasoning": "runtime ok"
+  },
+  {
+    "name": "functional",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "assertions": [
+        {
+          "kind": "render",
+          "passed": true,
+          "detail": "page loaded"
+        },
+        {
+          "kind": "visible",
+          "target": "css=.app-shell",
+          "passed": true
+        }
+      ]
+    },
+    "reasoning": "2/2 interaction assertions passed"
+  },
+  {
+    "name": "accessibility",
+    "kind": "deterministic",
+    "score": 85.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "violation_count": 1,
+      "violations": [
+        {
+          "id": "landmark-one-main",
+          "impact": "moderate",
+          "description": "Ensure the document has a main landmark"
+        }
+      ]
+    },
+    "reasoning": "1 axe violations"
+  },
+  {
+    "name": "visual",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "vision judge requires a live model screenshot"
+  },
+  {
+    "name": "ux",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "UX judge requires a live model screenshot"
+  }
+]

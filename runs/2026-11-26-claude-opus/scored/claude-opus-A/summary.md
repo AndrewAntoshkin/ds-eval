@@ -1,0 +1,30 @@
+# claude-opus-A
+
+Model: **claude-opus-A**
+Overall: **63.4**
+Cases: 14 · cost $0.0000
+
+| Case | Category | Overall | DS | A11y | Code |
+| --- | --- | --- | --- | --- | --- |
+| a11y-labels-001 | accessibility | 69.0 | 0.0 | 100.0 | 100.0 |
+| adversarial-actions-001 | adversarial | 67.4 | 0.0 | 100.0 | 90.0 |
+| adversarial-color-001 | adversarial | 62.6 | 0.0 | 60.0 | 100.0 |
+| component-button-001 | component | 48.8 | 0.0 | 55.0 | 100.0 |
+| component-feedback-001 | component | 69.0 | 0.0 | 100.0 | 100.0 |
+| component-input-001 | component | 64.2 | 0.0 | 85.0 | 85.0 |
+| component-select-001 | component | 63.4 | 0.0 | 75.0 | 90.0 |
+| edge-long-001 | edge-cases | 65.0 | 0.0 | 85.0 | 90.0 |
+| page-notifications-001 | pages | 52.3 | 0.0 | 75.0 | 75.0 |
+| page-settings-001 | pages | 60.2 | 0.0 | 70.0 | 75.0 |
+| pattern-card-list-001 | patterns | 69.0 | 0.0 | 100.0 | 100.0 |
+| pattern-confirm-001 | patterns | 69.0 | 0.0 | 100.0 | 100.0 |
+| pattern-empty-001 | patterns | 65.0 | 0.0 | 75.0 | 100.0 |
+| pattern-invite-modal-001 | patterns | 63.4 | 0.0 | 100.0 | 65.0 |
+
+## Aggregates
+
+- DS compliance: 0.0
+- Functional: 94.0
+- Accessibility: 84.3
+- Code quality: 90.7
+- Reliability: 100.0

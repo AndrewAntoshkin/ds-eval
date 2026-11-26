@@ -1,0 +1,156 @@
+[
+  {
+    "name": "static",
+    "kind": "deterministic",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "found_components": [
+        "ToggleRow"
+      ],
+      "missing_required": [
+        "Switch",
+        "Radio",
+        "Checkbox",
+        "Button"
+      ],
+      "hex": [
+        "#f5f6f8"
+      ],
+      "native_elements": [
+        "button",
+        "input"
+      ],
+      "uses_ds_imports": false,
+      "forbidden_hits": [
+        "native-button",
+        "native-input",
+        "raw-color"
+      ],
+      "parser": "babel"
+    },
+    "reasoning": "missing required components: Switch, Radio, Checkbox, Button; no design-system import; hardcoded colors: ['#f5f6f8']; forbidden: native-button, native-input, raw-color"
+  },
+  {
+    "name": "ds_compliance",
+    "kind": "deterministic",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "required": [
+        "Switch",
+        "Radio",
+        "Checkbox",
+        "Button"
+      ],
+      "found": [],
+      "missing": [
+        "Switch",
+        "Radio",
+        "Checkbox",
+        "Button"
+      ],
+      "forbidden_hits": [
+        "native-button",
+        "native-input",
+        "raw-color"
+      ]
+    },
+    "reasoning": "AST compliance against required/forbidden component rules"
+  },
+  {
+    "name": "code_quality",
+    "kind": "deterministic",
+    "score": 75.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "bytes": 9483
+    },
+    "reasoning": "high function count; very large generated file"
+  },
+  {
+    "name": "reliability",
+    "kind": "deterministic",
+    "score": 100.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "build": "ok",
+      "screenshot": true,
+      "page_errors": [],
+      "console_errors": []
+    },
+    "reasoning": "runtime ok"
+  },
+  {
+    "name": "functional",
+    "kind": "deterministic",
+    "score": 66.7,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "assertions": [
+        {
+          "kind": "render",
+          "passed": true,
+          "detail": "page loaded"
+        },
+        {
+          "kind": "visible",
+          "target": "role=radio[name=Weekly]",
+          "passed": true
+        },
+        {
+          "kind": "click",
+          "target": "role=button[name=\"Save preferences\"]",
+          "passed": false,
+          "detail": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=\"Save preferences\").first\n    - locator resolved to <button disabled type=\"submit\" class=\"np-button\">Save preferences</button>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n      - waiting 100ms\n    10 \u00d7 waiting for element to be visible, enabled and stable\n       - element is not enabled\n     - retrying click action\n       - waiting 500ms\n"
+        }
+      ]
+    },
+    "reasoning": "2/3 interaction assertions passed"
+  },
+  {
+    "name": "accessibility",
+    "kind": "deterministic",
+    "score": 75.0,
+    "max_score": 100,
+    "passed": true,
+    "details": {
+      "violation_count": 1,
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+        }
+      ]
+    },
+    "reasoning": "1 axe violations"
+  },
+  {
+    "name": "visual",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "vision judge requires a live model screenshot"
+  },
+  {
+    "name": "ux",
+    "kind": "llm",
+    "score": 0.0,
+    "max_score": 100,
+    "passed": false,
+    "details": {
+      "skipped": true
+    },
+    "reasoning": "UX judge requires a live model screenshot"
+  }
+]

@@ -1,0 +1,18 @@
+prepare sandbox from /workspace/examples/demo-design-system
+npm run build
+
+> demo-design-system@1.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 34 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.39 kB │ gzip:  0.27 kB
+dist/assets/index-D9wBKVMP.css    3.64 kB │ gzip:  1.08 kB
+dist/assets/index-BAqt_YuL.js   144.51 kB │ gzip: 46.51 kB
+✓ built in 650ms
+
+preview http://127.0.0.1:44911/
+screenshot=True functional=100.0 a11y=70.0
